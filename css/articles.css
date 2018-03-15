@@ -1,0 +1,74 @@
+
+
+/* Article design */
+
+.articlesPage img{
+    max-width: 100%;
+    margin: 5px;
+}
+
+.articlesPage{
+    border-bottom: 1px solid rgb(70, 70, 70);
+    padding: 20px 10px;
+}
+
+.big{
+    border-top: 1px solid rgb(70, 70, 70);
+    margin-bottom: 50px;
+}
+
+
+/* Page numbers */
+
+
+.pagination{
+    display: inline;
+    font-weight: 500;
+    /* float: left; */
+
+}
+
+.pagination a {
+    color: rgb(19, 18, 18);
+    float: right;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color .5s;
+}
+
+.pagination a:hover{
+    background-color: rgb(255, 137, 156);
+    border-radius: 20%;
+}
+
+.pagination .active{
+    background-color: pink;
+    border-radius: 20%;
+}
+
+.pageNumber li{
+    list-style: none;
+    float: left;
+}
+
+.pageNumber li a {
+    display: block;
+    float: right;
+}
+
+/* Big article small pictures */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
