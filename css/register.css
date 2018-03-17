@@ -1,4 +1,17 @@
-h3{
-
+.form-horizantal{
+    width: 25%;
 }
 
+.inputField{
+    background-color: rgba(216, 245, 225, 0.603);
+}
+
+.inputField:focus{
+    border: 1px solid grey;
+}
+
+button{
+    float: right;
+    /* font-size: 14px;
+    padding: 10px; */
+}

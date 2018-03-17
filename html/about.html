@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet"> 
     <link href="../css/register.css" rel="stylesheet">
+    
 </head>
 <body>
                                                                 <!-- Icon -->
@@ -50,95 +51,43 @@
     </header>
 
     <main>
-                                                    <!-- Current posion on the website -->
+                                            <!-- Current posion on the website -->
         <div class="container">
-          <ol class="breadcrumb" class="currentPage">
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li>
-                <a href="register.html" class="active">Register</a>
-              </li>
-          </ol>
-         </div>
-                                                                <!-- Form / Register -->
-    
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-4" >
-                    <h3> Register </h3>
-                </div>
-            </div>
+            <ol class="breadcrumb" class="currentPage">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html" class="active">About us</a>
+                </li>
+            </ol>
         </div>
-        <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="inputText3" class="col-sm-2 control-label">First name</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control inputField" id="inputText3" placeholder="First name">
-                    </div>
+
+        <div id="tabs">
+                <ul>
+                  <li><a href="#fragment-1"><span>One</span></a></li>
+                  <li><a href="#fragment-2"><span>Two</span></a></li>
+                  <li><a href="#fragment-3"><span>Three</span></a></li>
+                </ul>
+                <div id="fragment-1">
+                  <p>First tab is active by default:</p>
+                  <pre><code>$( "#tabs" ).tabs(); </code></pre>
                 </div>
-                <div class="form-group">
-                    <label for="inputText3" class="col-sm-2 control-label">Last name</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control inputField" id="inputText3" placeholder="Last name">
-                    </div>
+                <div id="fragment-2">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                 </div>
-                <div class="form-group">
-                  <label for="inputText3" class="col-sm-2 control-label">Username</label>
-                  <div class="col-sm-4">
-                    <input type="Text" class="form-control inputField" id="inputText3" placeholder="Username">
-                  </div>
+                <div id="fragment-3">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                 </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                  <div class="col-sm-4">
-                    <input type="password" class="form-control inputField" id="inputPassword3" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Retype password</label>
-                    <div class="col-sm-4">
-                        <input type="password" class="form-control inputField" id="inputPassword3" placeholder="Retype password">
-                    </div>
-                </div>
-               
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-4">
-                        <div>
-                            <select class="form-control inputField dropDown">
-                                
-                                <option type="text" placeholder="Country"></option>
-                                <option value="france">France</option>
-                                <option value="croatia">Croatia</option>
-                                <option value="mexico">Mexico</option>
-                                <option value="australia">Australia</option>
-                                <option value="iceland">Iceland</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-4">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> I agree to terms and conditions
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-4">
-                    <button type="submit" class="btn btn-default button">Sign in</button>
-                  </div>
-                </div>
-            </form>
-        </div>
-        </div>
-        </div>
-    </div>
-</main>
+              </div>
+
+
+    </main>
      
- 
+
                                                         <!-- Social media -->
 
     <div class="allMedia">
@@ -183,5 +132,10 @@
             </div>       
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $('#tabs').tabs();
+    </script>
 </body>
 </html>
