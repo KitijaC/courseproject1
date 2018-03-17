@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" id="reg-form">
                 <div class="form-group">
                     <label for="inputText3" class="col-sm-2 control-label">First name</label>
                     <div class="col-sm-4">
@@ -107,12 +107,12 @@
                         <div>
                             <select class="form-control inputField dropDown">
                                 
-                                <option type="text" placeholder="Country"></option>
-                                <option value="france">France</option>
-                                <option value="croatia">Croatia</option>
-                                <option value="mexico">Mexico</option>
-                                <option value="australia">Australia</option>
-                                <option value="iceland">Iceland</option>
+                                <option value="0">Choose a country</option>
+                                <option value="1">France</option>
+                                <option value="2">Croatia</option>
+                                <option value="3">Mexico</option>
+                                <option value="4">Australia</option>
+                                <option value="5">Iceland</option>
                             </select>
                         </div>
                     </div>
@@ -183,5 +183,36 @@
             </div>       
         </div>
     </footer>
+    <script>
+        $('reg-form').submit(function(){
+            var isValid = true;
+            var errors = [];
+
+            if ($('input[name="username"]').val() == '') {
+                errors.push('Please enter username');
+                $('input[name="username"]').addClass('hasError')
+            }
+
+            if ($('input[name="password"]').val() == '') {
+                errors.push('Please enter password');
+                $('input[name="password"]').addClass('hasError')
+            }
+
+             if ($('input[name="password"]').val() == '') {
+                errors.push('Please enter password');
+                $('input[name="password"]').addClass('hasError')
+            }
+
+             if ($('input[name="password"]').val() == '') {
+                errors.push('Please enter password');
+                $('input[name="password"]').addClass('hasError')
+            }
+
+             if ($('input[name="password"]').val() == '') {
+                errors.push('Please enter password');
+                $('input[name="password"]').addClass('hasError')
+            }
+    });
+    </script>
 </body>
 </html>
