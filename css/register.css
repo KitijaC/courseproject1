@@ -1,3 +1,10 @@
+.register{
+    font-style: italic;
+    font-weight: 600;
+    padding: 20px auto;
+    font-size: 30px;
+}
+
 .form-horizantal{
     width: 25%;
 }
@@ -14,4 +21,15 @@ button{
     float: right;
     /* font-size: 14px;
     padding: 10px; */
+}
+
+.errors{
+    color: rgb(158, 88, 88);
+}
+
+.errors li{
+    width: 150%;
+    list-style-type: circle;
+    /* text-align: center; */
+    text-align: justify
 }

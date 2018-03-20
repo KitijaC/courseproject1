@@ -1,0 +1,30 @@
+.chat-main-window{
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+.chat-message{
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+.chat-message:first-child{
+    border-top: none;
+}
+.chat-message h5 em{
+    color: #ccc;
+    font-size: 12px;
+    font-style: normal; 
+}
+.chat-message-form{
+    padding: 10px;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    overflow: hidden;
+}
+#chat-username-input{
+    width: 300px;
+}
+#chat-send-message-button{
+    margin-top: 45px;

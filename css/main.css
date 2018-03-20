@@ -129,7 +129,7 @@ h4{
 }
 
 .readMore{
-    display: inline-block;
+    display:block;
     color: rgb(196, 73, 73);
     text-decoration: none;
 

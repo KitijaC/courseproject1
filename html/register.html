@@ -66,7 +66,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-4" >
-                    <h3> Register </h3>
+                    <h2 class="register"> Register </h2>
+                </div>
+            </div>
+       
+            <div class="row">
+                <div class="col-xs-4">
+                        <div class="errors">
+                                <ul>
+            
+                                </ul>
                 </div>
             </div>
         </div>
@@ -74,38 +83,38 @@
                 <div class="form-group">
                     <label for="inputText3" class="col-sm-2 control-label">First name</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control inputField" id="inputText3" placeholder="First name">
+                        <input type="text" name="first-name" class="form-control inputField" id="inputText3" placeholder="First name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputText3" class="col-sm-2 control-label">Last name</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control inputField" id="inputText3" placeholder="Last name">
+                        <input type="text" name="last-name" class="form-control inputField" id="inputText3" placeholder="Last name">
                     </div>
                 </div>
                 <div class="form-group">
                   <label for="inputText3" class="col-sm-2 control-label">Username</label>
                   <div class="col-sm-4">
-                    <input type="Text" class="form-control inputField" id="inputText3" placeholder="Username">
+                    <input type="text" name="username" class="form-control inputField" id="inputText3" placeholder="Username">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-4">
-                    <input type="password" class="form-control inputField" id="inputPassword3" placeholder="Password">
+                    <input type="password" name="password" class="form-control inputField" id="inputPassword3" placeholder="Password">
                   </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Retype password</label>
                     <div class="col-sm-4">
-                        <input type="password" class="form-control inputField" id="inputPassword3" placeholder="Retype password">
+                        <input type="password" name="password2" class="form-control inputField" id="inputPassword3" placeholder="Retype password">
                     </div>
                 </div>
                
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-4">
                         <div>
-                            <select class="form-control inputField dropDown">
+                            <select placeholder="Please select coutnry" name="country" class="form-control inputField">
                                 
                                 <option value="0">Choose a country</option>
                                 <option value="1">France</option>
@@ -121,21 +130,18 @@
                   <div class="col-sm-offset-2 col-sm-4">
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox"> I agree to terms and conditions
+                        <input type="checkbox" name="agree"> I agree to terms and conditions
                       </label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-4">
-                    <button type="submit" class="btn btn-default button">Sign in</button>
+                    <button type="submit" class="btn btn-default button">Sign up</button>
                   </div>
                 </div>
             </form>
         </div>
-        </div>
-        </div>
-    </div>
 </main>
      
  
@@ -183,36 +189,55 @@
             </div>       
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script>
-        $('reg-form').submit(function(){
-            var isValid = true;
+        $('#reg-form').submit(function(){
             var errors = [];
-
+            $('.errors ul').html('');
+            $('.has-error').removeClass('has-error');
             if ($('input[name="username"]').val() == '') {
                 errors.push('Please enter username');
-                $('input[name="username"]').addClass('hasError')
+                $('input[name="username"]').addClass('has-error');
             }
-
             if ($('input[name="password"]').val() == '') {
                 errors.push('Please enter password');
-                $('input[name="password"]').addClass('hasError')
+                $('input[name="password"]').addClass('has-error');
             }
-
-             if ($('input[name="password"]').val() == '') {
-                errors.push('Please enter password');
-                $('input[name="password"]').addClass('hasError')
+            if ($('input[name="password"]').val().length < 8) {
+                errors.push('Password must be at least 8 symbols');
+                $('input[name="password"]').addClass('has-error');
             }
-
-             if ($('input[name="password"]').val() == '') {
-                errors.push('Please enter password');
-                $('input[name="password"]').addClass('hasError')
+            if ($('input[name="password2"]').val() == '') {
+                errors.push('Please retype the password');
+                $('input[name="password2"]').addClass('has-error');
             }
-
-             if ($('input[name="password"]').val() == '') {
-                errors.push('Please enter password');
-                $('input[name="password"]').addClass('hasError')
+            if ($('input[name="password2"]').val() != $('input[name="password"]').val()) {
+                errors.push('Passwords must match');
+                $('input[name="password"]').addClass('has-error');
+                $('input[name="password2"]').addClass('has-error');
             }
-    });
+            if ($('input[name="first_name"]').val() == '') {
+                errors.push('Please enter first name');
+                $('input[name="first_name"]').addClass('has-error');
+            }
+            if ($('select[name="country"]').val() == 0) {
+                errors.push('Please select country');
+                $('select[name="country"]').addClass('has-error');
+            }
+            if ($('input[name="agree"]').is(":checked") == false) {
+                errors.push('Please agree with the terms and conditons');
+                $('input[name="agree"]').addClass('has-error');
+            }
+            if (errors.length > 0) {
+                // handle errors
+                for (var index = 0; index < errors.length; index++) {
+                    var element = errors[index];
+                    $('.errors ul').append('<li>' + element + '</li>');
+                }
+                $('.errors').show();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>
