@@ -66,21 +66,21 @@
         
                                                             <!-- Tabs -->
 
-        <div class="col-sm-12">
-                <div id="tabs">
+        <div class="col-sm-12 lightpage">
+                <div id="tabs" class="sexytabs ui-widget-header ui-corner-top">
                         <ul class="tabForm">
                           <li><a href="#fragment-1"><span>One</span></a></li>
                           <li><a href="#fragment-2"><span>Two</span></a></li>
                           <li><a href="#fragment-3"><span>Three</span></a></li>
                         </ul>
-                        <div id="fragment-1">
+                        <div id="fragment-1" class="tabs3" >
                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore adipisci quibusdam voluptate a repudiandae, maxime ab? Cupiditate perspiciatis, repellat atque voluptatum inventore saepe hic ab, nisi ipsam eum iure. Ad.</p>
                         </div>
-                        <div id="fragment-2">
+                        <div id="fragment-2" class="tabs3">
                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                         </div>
-                        <div id="fragment-3">
+                        <div id="fragment-3" class="tabs3">
                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -141,7 +141,10 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $('#tabs').tabs();
+        $(".sexytabs").tabs({ 
+  show: { effect: "slide", direction: "left", duration: 200, easing: "easeOutBack" } ,
+  hide: { effect: "slide", direction: "right", duration: 200, easing: "easeInQuad" } 
+});
     </script>
 </body>
 </html>

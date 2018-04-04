@@ -1,12 +1,215 @@
+/* @import "compass/css3";
 
-.aboutimg {
-    max-width: 100%;
-    padding: 15px;
-  }
-  
-  .about-us-text {
-    padding: 15px 0 15px 0;
-    text-align: justify;
-  }
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
 
+$color: rgba(22, 195, 255,0.5);
+$border: rgba(0,0,0,0.2);
+$background: #fafafa;
+
+$darkcolor: rgba(175,227,100, 0.6);
+$darkborder: rgba(255,255,255, 0.3);
+$darkbackground: #333;
+
+.sexytabs > ul {
   
+  text-align: center; font-weight: 500;
+  margin: 50px 0 0; padding: 0; position: relative;
+  border-bottom: 1px solid $border; z-index: 1;
+  
+  > li {
+    
+    display: inline-block; background: $background;
+    padding: 0.6em 0; position: relative; width: 33%; margin: 0 0 0 -4px;
+    
+    &:before,
+    &:after { opacity: 0; transition: 0.3s ease; }
+    
+    &.ui-tabs-active:before, &.ui-tabs-active:after,
+    &.ui-state-hover:before, &.ui-state-hover:after,
+    &.ui-state-focus:before, &.ui-state-focus:after{ opacity: 1; }
+    
+    // this is the shadow under the text/mask
+    &:before,
+    &.ui-state-active.ui-state-hover:before,
+    &.ui-state-active.ui-state-focus:before{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      box-shadow: 0 2px 3px $color;
+      top: 50%; bottom: 0px; left: 5px; right: 5px;
+      border-radius: 100px / 10px; 
+    }
+    
+    // this is the "diamond" mask that creates the
+    // nice indent effect.
+    &:after,
+    &.ui-state-active.ui-state-hover:after,
+    &.ui-state-active.ui-state-focus:after{
+      content: ""; background: $background;
+      position: absolute;
+      width: 12px; height: 12px;
+      left: 50%; bottom: -6px; margin-left: -6px;
+      transform: rotate(45deg);
+      box-shadow: 
+        inset 3px 3px 3px $color, 
+        inset 1px 1px 1px opacify($border,0.1);
+      
+    }
+    &.ui-state-hover:before,
+    &.ui-state-focus:before{
+      box-shadow: 0 2px 3px $border;
+    }
+    &.ui-state-hover:after,
+    &.ui-state-focus:after{
+      box-shadow: 
+        inset 3px 3px 3px $border, 
+        inset 1px 1px 1px opacify($border,0.1);
+    }
+    &.ui-state-focus a {
+      text-decoration: underline;  
+    }
+    
+    &:focus { outline: none; }
+    
+    a {
+      
+      color: #444; text-decoration: none;
+      
+      &:focus { outline: none; }
+      span { position: relative; top: -0.5em; }
+      
+    }
+  }
+}
+
+
+.sexytabs.dark > ul {
+  
+  border-bottom-color: $darkborder;
+  
+  > li {
+    
+    background: $darkbackground;
+    
+    
+    // this is the shadow under the text/mask
+    &:before,
+    &.ui-state-active.ui-state-hover:before,
+    &.ui-state-active.ui-state-focus:before {
+      box-shadow: 0 2px 3px $darkborder;
+    }
+    
+    // this is the "diamond" mask that creates the
+    // nice indent effect.
+    &:after,
+    &.ui-state-active.ui-state-hover:after,
+    &.ui-state-active.ui-state-focus:after{
+      background: $darkbackground;
+      box-shadow: 
+        inset 3px 3px 3px $darkborder, 
+        inset 1px 1px 1px opacify($darkborder,0.2);
+    }
+    &.ui-state-hover:before,
+    &.ui-state-focus:before{
+      box-shadow: none;
+    }
+    &.ui-state-hover:after,
+    &.ui-state-focus:after{
+      box-shadow: inset 1px 1px 0px opacify($darkborder,0.1);
+    }
+    
+    a {
+      color: white;
+    }
+  }
+}
+
+
+
+
+// misc setup CSS.
+
+img { 
+  width: 60px; float: left; 
+  margin: 0 1em 1em 0; border-radius: 3px; }
+
+body{ 
+  font-size: 1em; background: $background; 
+  font-family: Lato; font-weight: 300;
+}
+
+h1 { text-align: center; font-size: 20px;  }
+
+.sexytabs { width: 90%; min-width: 360px; margin: auto; }
+.contents { padding: 20px 50px; min-height: 200px; }
+
+.darkpage { 
+  
+  background: #333; 
+  color: white;
+  
+}
+
+.darkpage,
+.lightpage { padding: 50px 0; }
+
+
+@media screen and (min-width: 1000px) {
+  .darkpage,
+  .lightpage { width: 50%; float: left; padding: 0; }
+} */
+
+
+#main {
+  margin-top: 50px;
+  position: relative;
+  padding: 0;
+}
+.ui-tabs-nav {
+  background-color: #222 !important; /*To overwrite jquery-ui.css*/
+  height: 30px;                        /*To stop nav block scaling of tab size*/
+}
+
+.ui-tabs .ui-tabs-nav {
+  margin: 0;
+  padding: 0.2em 0.2em 0;
+  border: none;
+  background: none;
+  border-radius: 2px 2px 0 0; /*To affect only top corners*/
+}
+
+.ui-tabs .ui-tabs-nav li {
+  position: relative;    /*To overwrite jquery-ui.css*/
+  top: -10px !important;  /*To overwrite jquery-ui.css*/
+  border: none;
+margin: 0 0 -5px 0;
+  background: none;
+}
+.ui-tabs-anchor{
+  color: white !important;                  /*To overwrite jquery-ui.css*/
+  text-decoration: underline !important;    /*To overwrite jquery-ui.css*/
+}
+#main ul.ui-widget-header, #main ul.ui-widget-content, #main ul.ui-state-default, #main ul.ui-state-hover {
+  background: none;
+  border: none
+}
+
+#main .ui-tabs-active a {
+ -moz-border-bottom-colors: none;
+ -moz-border-left-colors: none;
+ -moz-border-right-colors: none;
+ -moz-border-top-colors: none;
+ background-color: white;        /*To make it looks like on example pic, it is possible do do with it whatever you want*/
+ border-color: #CCCCCC;
+ border-style: solid;
+ border-width: 1px 1px 0;
+ border-radius: 5px 5px 0 0;    /*To affect only top corners*/
+ color: #222222;
+ position: relative;
+ z-index: 5;
+ color: black !important;             /*To overwrite jquery-ui.css*/
+ text-decoration: none !important;     /*To overwrite jquery-ui.css*/
+}    
+a:focus{                                /*To handle that annoing border(chrome) when item is in focus*/
+outline: none;   
+}
